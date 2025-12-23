@@ -10,4 +10,5 @@ import lombok.Setter;
 public class TestModel {
     private String languageVersion;
     private String code;
+    private String input;
 }

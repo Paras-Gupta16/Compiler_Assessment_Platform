@@ -1,5 +1,6 @@
 package com.example.compiler.service;
 
+import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 
 import com.example.compiler.component.DockerExecution;
@@ -15,7 +16,7 @@ public class CompilerService {
     private DockerExecution dockerExecution;
 
     @Async("compiler")
-    public CompletableFuture<OutputModel> runService(TestModel testModel){
+    public CompletableFuture<OutputModel> runService(TestModel testModel) throws IOException {
         OutputModel outputModel = dockerExecution.run(testModel);
         return CompletableFuture.completedFuture(outputModel);
     }
